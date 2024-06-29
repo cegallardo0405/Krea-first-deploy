@@ -1,0 +1,261 @@
+---
+
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script>
+        import AOS from 'aos';
+        AOS.init();
+    </script>
+
+    <style>
+
+        .title-services {
+            text-align: center;
+            padding: 20px 20px 0px 20px;
+            margin: 0 auto;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            max-width: 1140px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divider-column {
+            flex: 1;
+            width: 25%;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid #225b7369;
+        }
+
+        .title-column {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 30px;
+        }
+
+        .title-column h1 {
+            color: #41bbb1;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+        .title-column h1 {
+                font-size: 2em;
+                margin-top: 2.5em;
+            }
+
+        .sup {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 20px 0px 20px 0px;
+            }
+
+        .inf {
+                display: none;
+            }
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            column-gap: 2.2rem;
+            row-gap: 3rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 4rem;
+        }
+        .card,
+        .heading-card {
+            width: 100%;
+            border-radius: 10px;
+            background: #fff;
+            padding: 2rem 2rem 3rem 2rem;
+            box-shadow: 0px 1px 25px 0px rgba(3, 38, 83, 0.137);
+            position: relative;
+            transition: all 300ms;
+        }
+
+        .heading-card {
+            background: linear-gradient(0deg, #225b73 0%, #59fef0 180%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: color 12s ease-in-out infinite;
+        }
+
+        @keyframes color {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(45deg);
+            }
+            100% {
+                filter: hue-rotate(0deg);
+            }
+        }
+
+        .heading-card__title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card__icon {
+            font-size: 1.4rem;
+            color: #fff;
+            background: linear-gradient(0deg, #225b73 0%, #59fef0 180%);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -30px;
+            left: 1.8rem;
+        }
+
+        .card__title {
+            font-size: 1.5rem;
+            color: #171835;
+            font-weight: 600;
+        }
+        .card__text {
+            color: #8f9096;
+            margin-top: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card__link {
+            color: #41bbb1;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            width: fit-content;
+        }
+        .card__link i {
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: all 300ms;
+        }
+        .card__link:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card:hover {
+            box-shadow: 0px 1px 25px 0px #225b73a2;
+            transform: translateY(-2px);
+        }
+
+    </style>
+
+</head>
+
+<body class=" font-[Raleway]">
+
+    <section class="title-services">
+        <div class="container">
+            <div class="column divider-column sup">
+                <div class="divider"></div>
+            </div>
+            <div class="column title-column">
+                <h1 data-aos="fade-in">Portafolio de servicios</h1>
+            </div>
+            <div class="column divider-column inf">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </section>
+
+    <main class='main'>
+        <div class="cards-container">
+           <!-- card title  -->
+           <div class="heading-card" data-aos="flip-up">
+              <h2 class="heading-card__title">Conoce nuestros servicios más populares!</h2>
+           </div>
+  
+           <!-- card 1  -->
+           <div class="card" data-aos="flip-up">
+              <div class="card__icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+              <h2 class="card__title">Gestión de proyectos</h2>
+              <p class="card__text">Nuestro servicio de gestión de proyectos es esencial para asegurar que los objetivos de su empresa se cumplan de manera eficiente y efectiva.</p>
+              <a class="card__link" href="/contacto">Conoce más <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+  
+           <!-- card 2  -->
+           <div class="card" data-aos="flip-up">
+              <div class="card__icon"><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i></div>
+              <h2 class="card__title">Búsqueda de recursos</h2>
+              <p class="card__text">Nuestro servicio de búsqueda de recursos está diseñado para ayudar a las empresas a identificar y asegurar las mejores fuentes de financiamiento.</p>
+              <a class="card__link" href="/contacto">Conoce más <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+  
+           <!-- card 3 -->
+           <div class="card" data-aos="flip-up">
+              <div class="card__icon"><i class="fa-solid fa-camera"></i></div>
+              <h2 class="card__title">Gestión empresarial</h2>
+              <p class="card__text">Nuestro servicio de gestión empresarial se enfoca en optimizar los procesos internos y mejorar la eficiencia organizacional.</p>
+              <a class="card__link" href="/contacto">Conoce más <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+  
+           <!-- card 4 -->
+           <div class="card" data-aos="flip-up">
+              <div class="card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <h2 class="card__title">Desarrollo web</h2>
+              <p class="card__text">Nuestro servicio de desarrollo web ofrece soluciones personalizadas para mejorar y optimizar su presencia en línea.</p>
+              <a class="card__link" href="/contacto">Conoce más <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+  
+           <!-- card 5 -->
+           <div class="card" data-aos="flip-up">
+              <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h2 class="card__title">Asesoría legal coorporativa</h2>
+              <p class="card__text">Nuestra asesoría legal corporativa ofrece soluciones integrales para proteger y apoyar su negocio.</p>
+              <a class="card__link" href="/contacto">Conoce más <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+  
+        </div>
+     </main>
+    
+</body>
+
+</html>

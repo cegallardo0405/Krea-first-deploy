@@ -1,0 +1,31 @@
+---
+import Hero from "./Hero.astro"
+import Main from "./Main.astro"
+import Separator from "./Separator.astro"
+import MainCards from "./MainCards.astro"
+import SubMain from "./SubMain.astro"
+import CallToAction from "./CallToAction.astro"
+---
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<section class="home">
+  <Hero/>
+<section class="main-content">
+  <Main/>
+  <Separator/>
+  <MainCards/>
+  <Separator/>
+  <SubMain/>
+  <CallToAction/>
+</section>
+</section>
+</html>
+
+<style>
+    .main-content{
+        padding: 0 2em;
+    }
+</style>

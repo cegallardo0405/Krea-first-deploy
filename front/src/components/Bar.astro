@@ -1,0 +1,156 @@
+---
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 80px;
+            height: auto;
+            z-index: 1003;
+            background-color: #225b73;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .logo {
+            width: 128px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .item {
+            font-size: 1em;
+            cursor: pointer;
+            color: white;
+        }
+
+        .contacto {
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            color: #41bbb1;
+            font: bold;
+        }
+
+        .contacto:hover {
+            color: #01ffea;
+        }
+
+        .item:hover {
+            color: #41bbb1;
+        }
+
+        #menuIcon {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            header{
+                padding: 10px 20px;
+            }
+
+            .menu {
+                padding: 20px;
+                margin: 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #225b73;
+                display: none;
+                flex-direction: column;
+                align-items: start;
+                gap: 22px;
+            }
+
+            #menuIcon {
+                display: initial;
+            }
+
+            .item {
+                width: 100%;
+            }
+        }
+
+        .menu.show {
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body class="font-[Raleway]">
+    <header id="Header">
+        <a href="/">
+            <img class="logo" src="../../public/Resources/krea.png" alt="Logo Krea">
+        </a>
+        <ion-icon id="menuIcon" name="menu-outline" class="text-3xl cursor-pointer text-white"></ion-icon>
+
+        <ul class="menu" id="navMenu">
+            <li>
+                <a class="item" href="/nosotros">Nosotros</a>
+            </li>
+            <li>
+                <a class="item" href="/servicios">Servicios</a>
+            </li>
+            <li>
+                <a class="item" href="/convocatorias">Convocatorias</a>
+            </li>
+            <li>
+                <a class="item" href="/blog">Blog</a>
+            </li>
+            <li>
+                <a class="contacto" href="/contacto">Contacto</a>
+            </li>
+        </ul>
+
+    </header>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const navMenu = document.getElementById('navMenu');
+        const header = document.getElementById('Header');
+
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            menuIcon.name = menuIcon.name === 'menu-outline' ? 'close-outline' : 'menu-outline';
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.style.boxShadow = '1px 1px 15px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+---
+import CardsContainer from "./CardsContainer.astro"
+import Card  from "./Card.astro"
+import 'aos/dist/aos.css'; 
+---
+<body>
+<div class="flex flex-col items-center mb-8">
+  <h1 data-aos="fade-right" class="text-center mb-4 font-bold custom-text-color custom-font p-4">Las cifras ratifican nuestro éxito</h1>
+  <CardsContainer>
+    <Card>
+      <div slot="front">
+        <h1 class="text-center mb-4 font-bold custom-text-color custom-font-card">3000</h1>
+        <h2 class="text-center mb-4 font-bold custom-font-subcard">Empresas atendidas</h2>
+      </div>
+      <div slot="back">
+        <p class="text-white text-center p-4">Hemos asistido a más de 3000 empresas en diversos sectores, brindándoles soluciones personalizadas que han permitido optimizar sus procesos, incrementar su productividad y alcanzar sus objetivos.</p>
+      </div>
+    </Card>
+    <Card>
+      <div slot="front">
+        <h1 class="text-center mb-4 font-bold custom-text-color custom-font-card">90%</h1>    
+        <h2 class="text-center mb-4 font-bold custom-font-subcard">Ejecución</h2>
+      </div>
+      <div slot="back">
+        <p class="text-white text-center p-4">Contamos con una tasa de ejecución del 90% en todos los proyectos que hemos gestionado. Esto se traduce en una implementación eficiente y efectiva de las estrategias propuestas.</p>
+      </div>
+    </Card>
+    <Card>
+      <div slot="front">
+        <h1 class="text-center mb-4 font-bold custom-text-color custom-font-card">+40</h1>
+        <h2 class="text-center mb-4 font-bold custom-font-subcard">Mil millones aprobados</h2>
+      </div>
+      <div slot="back">
+        <p class="text-white text-center p-4">Han sido aprobados más de 40 mil millones en financiamientos para proyectos innovadores y expansiones empresariales que impulsan el desarrollo y la sostenibilidad.</p>
+      </div>
+    </Card>
+  </CardsContainer>  
+</div>
+<script>
+  import AOS from 'aos';
+  AOS.init();
+</script>
+<body/>
+
+
+<style>
+    .custom-text-color {
+      color: var(--main-color);
+      font-weight: 700;
+      margin: 50px;
+      font-size: 2.5em;
+    }
+    .custom-font {
+      font-family: var(--font-family);
+    }
+
+    .custom-font-card{
+        font-size: 4.5em;
+        color: var(--second-color);
+    }
+
+    .custom-font-subcard{
+        color: var(--main-color);
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+  </style>

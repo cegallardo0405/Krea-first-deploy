@@ -1,0 +1,94 @@
+---
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        .nav-links {
+            z-index: 1000;;
+        }
+
+        .logo {
+            z-index: 1001;
+            
+        }
+
+        .logo img{
+            border-radius: 10px;
+        }
+
+        a{
+            transition: all ease-in-out .2s;
+        }
+
+    </style>
+
+</head>
+
+<body class="font-[Raleway] ">
+    <header class="pt-2.5 pb-2.5  bg-[#225b73]">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <div class="logo">
+                <a href="/">
+                    <img class="w-32 cursor-pointer" src="../../public/Resources/krea.png" alt="Logo Krea">
+                </a>
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute bg-[#225b73] text-white md:min-h-fit min-h-[50vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    
+                    <li>
+                        <a class="hover:text-gray-300 cursor-pointer" href="/nosotros">Nosotros</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-300 cursor-pointer" href="/servicios">Servicios</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-300 cursor-pointer" href="/convocatorias">Convocatorias</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-300 cursor-pointer" href="/blog">Blog</a> 
+                    </li>
+
+                    <li >
+                        <a  class=" font-bold hover:text-[#67fff2] text-[#41BBB1] cursor-pointer" href="/contacto">Contacto</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-6 md:hidden">
+                <ion-icon id="menuIcon" onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden text-white"></ion-icon>
+            </div>
+            
+        </nav>
+    </header>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon'); // Cambia 'menuButton' por 'menuIcon'
+        const navLinks = document.querySelector('.nav-links');
+
+        function toggleMenu(event) {
+            event.target.name = event.target.name === 'menu-outline'? 'close-outline' : 'menu-outline';
+            navLinks.classList.toggle('top-[9%]');
+        }
+
+        menuIcon.addEventListener('click', toggleMenu); // Cambia 'onToggleMenu' por 'toggleMenu'
+
+        
+    </script>
+
+</body>
+
+</html>

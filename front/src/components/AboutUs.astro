@@ -1,0 +1,904 @@
+---
+
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        import AOS from 'aos';
+        AOS.init();
+    </script>
+
+    <style>
+        .bg {
+            background-image: url(../../public/resources/patternpad-2024-06-17-14-52-48.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 32vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 70px;
+        }
+
+        .bg::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 32vh; /* Asegúrate de que la altura coincida con la de.bg */
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+
+        .info {
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                padding: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+
+        .info h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.0em;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Media query para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            .bg {
+                    height: 16vh;
+                }
+
+            .bg::before {
+                    height: 16vh;
+                }
+
+                .info h1 {
+                    font-size: 1.5em;
+                }
+            }
+
+        /* Media query para pantallas medianas (tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .bg {
+                    height: 25vh;
+                }
+
+            .bg::before {
+                    height: 25vh;
+                }
+
+            }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+            padding: 0px 70px 0px 70px; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            margin-top: 70px;
+        }
+
+    /* Estilos para los elementos de contenido */
+        .content-info {
+            flex-basis: 100%; /* Toma todo el ancho disponible por defecto */
+            padding: 20px 0px 20px 70px; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos horizontalmente */
+            justify-content: center; /* Centra los elementos verticalmente */
+        }
+
+        .content-animation{
+            flex-basis: 100%; /* Toma todo el ancho disponible por defecto */
+            padding: 20px 20px 20px 20px ; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos horizontalmente */
+            justify-content: center; /* Centra los elementos verticalmente */
+        }
+        
+
+        @media (max-width: 767px) {
+            .content-info {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        .content-info li {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: #225b73;
+            margin-bottom: 10px;
+        }
+
+        .content-info ul {
+            list-style-type: none; /* Quita las viñetas predeterminadas */
+            padding: 0; /* Elimina el relleno predeterminado del navegador */
+        }
+
+        .content-info li::before {
+            content: ''; /* Contenido vacío para el pseudo-elemento */
+            display: inline-block; /* Hace que el pseudo-elemento se comporte como un bloque en línea */
+            width: 10px; /* Ancho de la viñeta circular */
+            height: 10px; /* Altura de la viñeta circular */
+            margin-right: 10px; /* Espacio a la derecha de la viñeta */
+            background-color: #41bbb1; /* Color de fondo de la viñeta */
+            border-radius: 50%; /* Rellena el pseudo-elemento para hacerlo circular */
+            vertical-align: middle; /* Alinea verticalmente el centro de la viñeta con el texto */
+        }
+
+        .content-info span {
+            vertical-align: middle; /* Alinea verticalmente el texto con la viñeta */
+        }
+
+        .content-animation {
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Media query para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            .content{
+                padding: 20px;
+            }
+
+            .content-info,
+            .content-animation {
+                    flex-basis: 100%; /* Asegura que ambos ocupen todo el ancho en pantallas pequeñas */
+                }
+
+            .content-animation{
+                width: 300px;
+            }
+        }
+
+        /* Media query para pantallas medianas (tablets) */
+        @media (min-width: 773px) and (max-width: 1024px) {
+            .content{
+                padding: 0px 20px 0px 20px;
+            }
+
+            .content-info {
+                    flex-basis: 40%; /* Divide el espacio en dos partes iguales para pantallas medianas */
+                }
+
+            
+            .content-animation{
+                flex-basis: 60%;
+            }
+            
+        }
+
+        /* Media query para pantallas grandes */
+        @media (min-width: 1025px) {
+            .content-info,
+            .content-animation {
+                    flex-basis: 50%; /* Ajusta el tamaño según sea necesario para pantallas grandes */
+                }
+        }
+
+        .content-estadisticas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0px 70px 50px 70px; /* Padding original */
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) { /* Ajusta la consulta de medios para tablets */
+            .content-estadisticas {
+                padding: 0px 20px 50px 20px; /* Padding para tablets */
+            } 
+            
+        }
+
+        @media (max-width: 767px) {
+            .content-estadisticas {
+                padding: 0px 20px 50px 20px; /* Reduce el padding para pantallas pequeñas */
+            }
+        }
+
+        .estadisticas {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .estadisticas h1 {
+            font-family: 'Raleway';
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #41bbb1;
+            margin: 0;
+        }
+
+        .estadisticas p {
+            font-family: 'Raleway';
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #225b73;
+            padding: 0px 40px 0px 40px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .estadisticas p {
+                padding: 0px 20px 50px 20px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .content-estadisticas div {
+                width: calc(33.333% - 2rem);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .content-estadisticas div {
+                width: calc(33.333% - 2rem);
+            }
+        }
+
+        .patternpad {
+            background-image: url(../../public/resources/patternpad.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 32vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .patternpad::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vh; /* Asegúrate de que la altura coincida con la de .patternpad */
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .info-patternpad {
+            background: white;
+            position: absolute;
+            text-align: center;
+            z-index: 1000;
+            width: 100%;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-patternpad h1 {
+            font-family: 'Raleway';
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #41bbb1;
+            text-align: center;
+        }
+        
+
+        .info-patternpad p {
+            font-family: 'Raleway';
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #225b73;
+        }
+
+        /* Media query para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+        .patternpad {
+                height: 24vh; /* Reduce la altura de la imagen de fondo */
+            }
+
+        .patternpad::before {
+                height: 24vh; /* Asegúrate de que la altura coincida con la de .patternpad */
+            }
+
+        .info-patternpad {
+                padding: 10px; /* Reduce el padding para adaptarse mejor a pantallas pequeñas */
+            }
+
+        .info-patternpad h1 {
+                font-size: 1.8em; /* Reduce el tamaño de la fuente del título */
+            }
+        
+        .info-patternpad p {
+                font-size: 1.2em; /* Reduce el tamaño de la fuente del párrafo */
+            }
+        }
+
+        /* Media query para pantallas medianas (tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+        .patternpad {
+                height: 36vh; /* Ajusta la altura de la imagen de fondo para pantallas medianas */
+        }
+
+        .patternpad::before {
+                height: 36vh; /* Asegúrate de que la altura coincida con la de .patternpad */
+            }
+
+        .info-patternpad {
+                padding: 15px; /* Aumenta el padding para pantallas medianas */
+            }
+
+        .info-patternpad h1 {
+                font-size: 2.2em; /* Ajusta el tamaño de la fuente del título para pantallas medianas */
+            }
+
+        .info-patternpad p {
+                font-size: 1.4em; /* Ajusta el tamaño de la fuente del párrafo para pantallas medianas */
+            }
+        }
+
+        /* Media query para pantallas grandes */
+        @media (min-width: 1025px) {
+        .patternpad {
+                height: 40vh; /* Ajusta la altura de la imagen de fondo para pantallas grandes */
+            }
+
+        .info-patternpad {
+                padding: 20px; /* Mantiene el mismo padding para pantallas grandes */
+            }
+
+        .info-patternpad h1 {
+                font-size: 2.5em; /* Mantiene el mismo tamaño de fuente para pantellas grandes */
+            }
+        }
+
+        .title-cards {
+            text-align: center; /* Centra el texto dentro del contenedor */
+            padding: 20px 0; /* Agrega un poco de espacio arriba y abajo */
+            margin: 20px;
+        }
+
+        .title-cards h1 {
+            font-family: 'Raleway';
+            font-size: 2.0em; /* Tamaño de fuente grande para el título */
+            font-weight: 500; /* Fuerte peso de fuente para darle énfasis */
+            color: #225b73; /* Color oscuro para contraste */
+            margin: 0; /* Elimina el margen predeterminado del navegador */
+            padding: 0; /* Elimina el relleno predeterminado del navegador */
+        }
+
+        .container__card {
+            max-width: 1200px;
+            padding: 0px 20px 20px 20px ;
+            padding-bottom: 40px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap; /* Cambia a wrap para permitir el envoltorio de las tarjetas */
+            justify-content: space-around; /* Mejora la distribución de las tarjetas */
+        }
+
+        .card {
+            width: 250px; /* Ancho de las tarjetas */
+            position: relative;
+            margin: 10px; /* Margen alrededor de cada tarjeta */
+            transition: all 300ms;
+            border-radius: 20px;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+        .container__card {
+                flex-direction: column; /* Cambia la dirección de los elementos flexibles a columna */
+                align-items: stretch; /* Alinea los elementos para que se estiren al máximo ancho disponible */
+            }
+
+        .card {
+                width: 100%; /* Haz que las tarjetas ocupen todo el ancho disponible */
+                margin: 20px 0; /* Ajusta el margen para pantallas pequeñas */
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1120px) {
+            .card {
+                margin: 20px 0; /* Ajusta el margen para pantallas pequeñas */
+            }
+        }
+
+
+
+        .card:hover{
+            box-shadow: 0px 1px 25px 0px #225b73a2;
+        }
+
+        .card:hover .info__description{
+            margin-top: 0;
+            border-radius: 0px 0px 20px 20px;
+
+        }
+
+        .card:hover .icon{
+            margin-top: -110px;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .icon {
+            width: 100%;
+            height: 220px;
+            background: #EFF3F5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition: all 400ms cubic-bezier(0.5,0,0,1);
+            border-radius: 20px;
+        }
+
+
+        .icon i{
+            font-size: 120px;
+            color: #fff;
+            transition: all 400ms cubic-bezier(0.5,0,0,1);
+        }
+
+        .info__description {
+            width: 100%;
+            height: 210px;
+            color: #474747;
+            background: #EFF3F5;
+            padding: 20px;
+            margin-top: -220px;
+            transition: all 400ms cubic-bezier(0.5,0,0,1);
+            border-radius: 20px;
+        }
+
+        .info__description h3{
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        .info__description p{
+            font-size: 12px;
+            margin-top: 10px;
+            display: -webkit-box;
+            display: -moz-box;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+            -webkit-line-clamp: 10;
+            line-clamp: 10;
+            overflow: hidden;
+        }
+
+
+
+        /*COLOR DE LAS CARD*/
+
+        .c1:hover .icon{
+            background: #225b73;
+        }
+
+        .c1 .icon i{
+            color: #225b73;
+        }
+
+        .c1:hover .icon i{
+            color: #fff;
+        }
+
+
+        .c2:hover .icon{
+            background: #41bbb1;
+        }
+
+        .c2 .icon i{
+            color: #41bbb1;
+        }
+
+        .c2:hover .icon i{
+            color: #fff;
+        }
+
+
+        .c3:hover .icon{
+            background: #225b73;
+        }
+
+        .c3 .icon i{
+            color: #225b73;
+        }
+
+        .c3:hover .icon i{
+            color: #fff;
+        }
+
+        .c4:hover .icon{
+            background: #41bbb1;
+        }
+
+        .c4 .icon i{
+            color: #41bbb1;
+        }
+
+        .c4:hover .icon i{
+            color: #fff;
+        }
+
+
+        /*SLIDER*/
+
+        .title-slider {
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            max-width: 1140px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divider-column {
+            flex: 1;
+            width: 25%;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid #225b7369;
+        }
+
+        .title-column {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            padding: 30px;
+        }
+
+        .title-column h1 {
+            color: #41bbb1;
+            font-size: 2.0em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .title-column h1 {
+                font-size: 32px;
+                margin-top: 40px;
+            }
+
+            .sup {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 20px 0px 20px 0px;
+            }
+
+            .inf {
+                display: none;
+            }
+
+        }
+
+        .slider {
+            width: 75vw;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider .slide-track {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            -webkit-animation: scroll 40s linear infinite;
+            width: calc(200px * 18);
+        }
+
+        .slider .slide {
+            width: 200px;
+            padding: 10px;
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+
+        .slider .slide img {
+            width: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            100% {
+                -webkit-transform: translateX(calc(-200px * 9));
+                transform: translateX(calc(-200px * 9));
+            }
+        }
+
+        .slider-content .content-estadisticas{
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body class="font-[Raleway] ">
+    <div class="bg ">
+            <div class="info" data-aos="fade-up"
+            data-aos-anchor-placement="top-center">
+                <h1>Transformamos ideas en proyectos</h1>
+            </div>
+    </div>
+
+    <div class="content">
+        <div class="content-info" data-aos="fade-right">
+            <ul>
+                <li><span>Especializados en la creación de modelos de negocio exitosos.</span></li>
+                <li><span>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</span></li>
+                <li><span>Desarrollamos una metodología de búsqueda de recursos inteligentes.</span></li>
+            </ul>
+        </div>
+
+        <div class="content-animation" data-aos="fade-left">
+            <lottie-player src="https://lottie.host/722cc8f9-cfe8-47b2-becc-beaabf782814/uAHfmqW5ot.json" background="#ffffff" speed="1" style="width: 400px; height: 400px" loop autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+    </div>
+
+    <div class="content-estadisticas">
+        <div class="estadisticas" data-aos="flip-left">
+            <h1>+8</h1>
+            <p>Años de experiencia</p>
+        </div>
+
+        <div class="estadisticas" data-aos="flip-left">
+            <h1>90%</h1>
+            <p>Ejecución</p>
+        </div>
+
+        <div class="estadisticas" data-aos="flip-left">
+            <h1>+494</h1>
+            <p>Mil millones de recursos aprobados</p>
+        </div>
+    </div>
+
+    <div class="patternpad">
+        <div class="info-patternpad">
+            <p data-aos="fade-in">Nuestra meta:</p>
+            <h1 data-aos="zoom-in">Transformar la vida de miles de Colombianos</h1>
+        </div>
+    </div>
+
+    <div class="cards-content">
+        <div class="title-cards">
+            <h1 data-aos="fade-in">Lo que hacemos</h1>
+        </div>
+
+        <div class="container__card">
+
+            <div data-aos="flip-left" class="card c1">
+                <div class="icon">
+                    <i class="fa-regular fa-lightbulb"></i>
+                </div>
+                <div class="info__description">
+                    <h3>Ideación</h3>
+                    <p>Promover herramientas que le brinden la oportunidad a nuestro clientes y aliados de identificar necesidades y plantearlas como nuevas ideas de solución para el desarrollo de sus negocios, es una de las principales fortalezas de la empresa.</p>
+                    
+                </div>
+            </div>
+
+            <div data-aos="flip-left" class="card c2">
+                <div class="icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div class="info__description">
+                    <h3>Formulación</h3>
+                    <p>Adaptación a los diferentes modelos de estructuración de proyectos basados en las fuentes de cooperación nacional e internacional, complementando con perfiles y modelos exitosos de formulación.</p>
+                    
+                </div>
+            </div>
+
+            <div data-aos="flip-left" class="card c3">
+                <div class="icon">
+                    <i class="fa-solid fa-business-time"></i>
+                </div>
+                <div class="info__description">
+                    <h3>Dirección y administración</h3>
+                    <p>Basados en lineamientos del Project Management Institute (PMI), se lleva a cabo la ejecución de los proyectos, buscando siempre mitigar riesgos y realizar ejecuciones exitosas.</p>
+                    
+                </div>
+            </div>
+
+            <div data-aos="flip-left" class="card c4">
+                <div class="icon">
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <div class="info__description">
+                    <h3>Evaluación</h3>
+                    <p>Posterior al cierre de cada proyecto, es indispensable realizar un seguimiento de cuáles fueron sus resultados, a través de la evaluación de los proyectos, un equipo mide tanto la sostenibilidad como el incremento anual en indicadores.                    </p>
+                    
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div class="slider-content">
+        <section class="title-slider">
+            <div class="container">
+                <div class="column divider-column sup">
+                    <div class="divider"></div>
+                </div>
+                <div class="column title-column">
+                    <h1 data-aos="fade-in">Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
+                </div>
+                <div class="column divider-column inf">
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                </div>
+                
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="content-estadisticas">
+            <div class="estadisticas">
+                <h1 class="num" data-val="203">000</h1>
+                <p data-aos="fade-in">Cooperantes</p>
+            </div>
+    
+            <div class="estadisticas">
+                <h1 class="num" data-val="259">000</h1>
+                <p data-aos="fade-in">Convocatorias</p>
+            </div>
+    
+            <div class="estadisticas">
+                <h1 class="num" data-val="30">00</h1>
+                <p data-aos="fade-in">Billones en recursos</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Declaración de la variable al inicio del bloque de código
+        let valueDisplays = document.querySelectorAll(".num");
+
+        // Opciones para el Intersection Observer
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        // Función para manejar la intersección
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let valueDisplay = entry.target;
+                    let startValue = 0;
+                    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+                    let duration = Math.floor(4000 / endValue); // Asumiendo un intervalo fijo de 4000ms
+                    let counter = setInterval(function() {
+                        startValue += 1;
+                        valueDisplay.textContent = startValue.toString();
+                        if (startValue === endValue) {
+                            clearInterval(counter);
+                        }
+                    }, duration);
+
+                    // Detener el observador una vez que la animación comienza
+                    observer.unobserve(valueDisplay);
+                }
+            });
+        }
+
+        // Crear y configurar el Intersection Observer
+        let observer = new IntersectionObserver(handleIntersection, options);
+
+        // Iniciar la observación de los elementos
+        valueDisplays.forEach(valueDisplay => {
+            observer.observe(valueDisplay);
+        });
+        
+    </script>
+
+</body>
+
+
+</html>

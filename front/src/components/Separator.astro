@@ -1,0 +1,20 @@
+---
+const { color = '#b3e5e1', thickness = '2.5px', width = '75%' } = Astro.props;
+---
+
+<div class="separator-container">
+    <hr class="separator" style={`border-top: ${thickness} solid ${color}; width: ${width};`} />
+</div>
+
+<style>
+  .separator-container{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .separator {
+    border: none;
+    margin: 20px 0;  
+  }
+</style>

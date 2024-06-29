@@ -1,0 +1,266 @@
+---
+
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        import AOS from 'aos';
+        AOS.init();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Raleway';
+        }
+
+        /* Estilos de la sección de titulo e info */
+        
+        .opportunities-section {
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            max-width: 1140px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divider-column {
+            flex: 1;
+            width: 25%;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid #225b7369;
+        }
+
+        .title-column {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 30px;
+        }
+
+        .title-column h3 {
+            color: #41bbb1;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .opportunities-section .content p {
+            color: #333;
+            font-size: 1.188em;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+
+            .title-column h3 {
+                font-size: 2em;
+                margin-top: 2.5em;
+
+            }
+
+            .opportunities-section.content p {
+                font-size: 14px;
+            }
+
+            .sup {
+                    width: 100%;
+                    position: absolute; /* Posiciona absolutamente */
+                    top: 0; /* Coloca al inicio del contenedor */
+                    left: 0; /* Alinea al borde izquierdo */
+                    padding: 20px 0px 20px 0px;
+            }
+
+            .inf {
+                    display: none;
+            }
+        }
+
+        /* Estilos de las tarjetas */
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas según el tamaño de la pantalla */
+            column-gap: 2.2rem;
+            row-gap: 3rem;
+            justify-content: center;
+            align-items: start;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 1140px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .category {
+            background-color: #41bbb1;
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: -15px;
+            display: block;
+            margin-left: 15px;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+            width: fit-content;
+        }
+
+        .details {
+            padding: 40px;
+        }
+
+        .details h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+
+        .details p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            color: #888;
+        }
+
+        .meta.author,.meta.date {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta i {
+            margin-right: 5px;
+        }
+
+        .meta .date::before{
+            content: "-";
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+        .cards-container {
+                grid-auto-flow: row; /* Alinea los elementos en columnas */
+                gap: 40px;
+            }
+
+        .card {
+                width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+            }
+        }
+
+        /* Media query para pantallas medianas y grandes */
+        @media (min-width: 769px) {
+        .card {
+                /* Mantener el estilo original para pantallas medianas y grandes */
+            }
+        }
+    </style>
+
+</head>
+
+<body class="font-[Raleway]">
+    <div class=" mb-10">
+        <section class="opportunities-section">
+            <div class="container">
+                <div class="column divider-column sup">
+                    <div class="divider"></div>
+                </div>
+                <div class="column title-column">
+                    <h3 data-aos="fade-in">Entérate y accede a nuevas oportunidades </h3>
+                </div>
+                <div class="column divider-column inf">
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="content">
+                <p data-aos="fade-in" data-aos-delay="300">Descubre oportunidades innovadoras en el Sistema de Ciencia, Tecnología e Innovación del país. Participa en emocionantes convocatorias para dar vida a tus proyectos. ¡Sé parte del movimiento que está transformando el futuro!</p>
+            </div>
+        </section>
+
+        <div class="cards-container">
+            <div class="card">
+                <a href="https://puntoestrategico.com.co/2024/03/18/borrador-automatico-convocatoria-ecos-2-0/" title="Convocatoria ECOS 2.0" rel="nofollow" target="_blank">
+                    <img src="https://puntoestrategico.com.co/wp-content/uploads/2024/03/KV1_form-1.png" alt="Convocatoria ECOS 2.0">
+                </a>
+                <span class="category">
+                    <a href="https://puntoestrategico.com.co/category/convocatoria/">Convocatoria</a>
+                </span>
+                <div class="details">
+                    <h3>
+                        <a href="https://puntoestrategico.com.co/2024/03/18/borrador-automatico-convocatoria-ecos-2-0/" title="Convocatoria ECOS 2.0" rel="nofollow" target="_blank">Convocatoria ECOS 2.0</a>
+                    </h3>
+                    <p>Convocatoria Convocatoria ECOS 2.0 18 de Marzo del 2024 ¡Es hora de llevar tu proyecto al siguiente nivel con ECOS...</p>
+                    <div class="meta">
+                        <span class="author">
+                            <i class="fa fa-user" aria-hidden="true"></i>By 
+                            <a href="https://puntoestrategico.com.co/author/pe_web_2021/">Krea Proyectos</a>
+                        </span>
+                        <span class="date">
+                            <i class="fa fa-calendar-alt" aria-hidden="true"></i>marzo 18, 2024
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,47 @@
+---
+let img_path = "../../public/Resources/main-content3.svg"
+import 'aos/dist/aos.css'; 
+---
+<body>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
+  <div class="w-full md:w-3/5 mb-6 md:mb-0">
+    <h1 data-aos="fade-in" data-aos-delay="500" class=" mb-4 custom-title">Entérate de todo lo que Krea está logrando</h1>
+    <a href="/convocatorias" data-aos="zoom-in" data-aos-delay="500" class="bg-teal-500 text-white  text-l py-2 px-4 rounded-[20px] py-3 px-6 hover:bg-[#369b96]">Conoce más aquí</a>
+  </div>
+  <div class="w-full md:w-2/5 flex justify-center items-center" data-aos="fade-left" data-aos-delay="500">
+    <lottie-player src="https://lottie.host/3468fbc1-ae33-4f21-be09-163541ddbfb5/KiUebW1joJ.json" background="##FFFFFF" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1" mode="normal"></lottie-player>
+  </div>
+  <script>
+    import AOS from 'aos';
+    AOS.init();
+  </script>
+</div>
+<script>
+  import AOS from 'aos';
+  AOS.init();
+</script>
+</body>
+
+<style>
+  .custom-title {
+    font-size: 1.85rem; /* text-2xl */
+    line-height: 1.25; /* leading-tight */
+    color: #225b73;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .custom-title {
+        font-size: 2.25rem; /* text-4xl */
+        line-height: 1.25; /* leading-normal */
+    }
+}
+
+@media (min-width: 1024px) {
+    .custom-title {
+        font-size: 3.0rem; /* text-6xl */
+        line-height: 1.25; /* leading-relaxed */
+    }
+}
+</style>

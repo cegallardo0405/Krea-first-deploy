@@ -1,0 +1,25 @@
+---
+import NavBar from "../components/NavBar.astro"
+import Bar from "../components/Bar.astro"
+import Hero from "../components/Hero.astro"
+import Footer from "../components/Footer.astro"
+import "aos/dist/aos.css";
+
+---
+
+
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    
+    <Bar />
+      <slot />
+    <Footer />
+    
+   
+  </body>
+</html>

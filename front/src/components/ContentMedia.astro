@@ -1,0 +1,81 @@
+---
+const { imgSrc, reverseImg = false } = Astro.props;
+import 'aos/dist/aos.css';
+
+---
+
+<section class="my-64">
+  <link rel="stylesheet" href="./Styles/GlobalCss.css">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+      {!reverseImg ?
+        <div class="img-container" data-aos="fade-right" data-aos-delay="500">
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+          <dotlottie-player src="https://lottie.host/d671f312-1922-4516-bd90-9f572b170eef/xe7f5x0NwJ.lottie" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
+      : ''}
+      <div class="space-content flex flex-col justify-center p-4">
+        <slot />
+      </div>
+      {reverseImg ?
+        <div class="img-container">
+          <lottie-player src="https://lottie.host/3e533933-c279-4a51-9844-bbc0bd9dec1f/qR87KWkTrM.json" background="##fff" speed="1" style="width: 300px; height: 300px" loop controls autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+      : ''}
+    </div>
+  </div>
+</section>
+
+<script>
+  import AOS from 'aos';
+  AOS.init();
+</script>
+
+<style>
+  section {
+    margin: auto; /* Centra horizontalmente la sección */
+    max-width: 1200px; /* Limita el ancho máximo para que no se extienda demasiado */
+    font-size: 1.3em;
+  }
+
+  .space-content {
+    list-style-type: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #333;
+    padding: 10px;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que la imagen salga del contenedor en animaciones */
+    text-align: center; /* Centra la imagen horizontalmente */
+  }
+
+  img {
+    margin: 0;
+    padding: 0;
+    max-width: 80%;
+    height: auto;
+    animation: floatAnimation 3s ease-in-out infinite alternate; /* Animación continua */
+  }
+
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Movimiento hacia arriba */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .grid {
+    align-items: center;
+  }
+</style>

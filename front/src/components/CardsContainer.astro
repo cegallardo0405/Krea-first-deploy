@@ -1,0 +1,22 @@
+---
+---
+<body>
+<div class="flex justify-center items-center main-cont">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+        <slot />
+    </div>
+</div>
+<script>
+  import AOS from 'aos';
+  AOS.init();
+</script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" onload="AOS.init()"></script>
+<body/>
+<style>
+    .main-cont {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+</style>
+

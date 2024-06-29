@@ -1,0 +1,99 @@
+---
+import ContentMedia from "./ContentMedia.astro";
+let img_path = "../../public/Resources/main-content1.svg";
+import 'aos/dist/aos.css'; 
+---
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/GlobalCss.css" />
+    <style>
+      body {
+        font-family: "Raleway";
+      }
+
+      .cont {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .card {
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        flex: 1 1 200px;
+        max-width: 300px;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .icon {
+        font-size: 50px;
+        color: #41bbb1;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin: 20px 0;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  
+  
+<body>
+    <div class="cont">
+        <div data-aos="fade-right" data-aos-delay="300"  class="card">
+            <div class="icon">
+              <i class="fa-solid fa-check-double"></i>
+            </div>
+            <h2>Encuentra un aspecto diferenciador</h2>
+        </div>
+        <div data-aos="fade-down" data-aos-delay="300"  class="card">
+            <div class="icon">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            <h2>Accede a beneficios tributarios y regalías</h2>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="300" class="card">
+            <div class="icon">
+              <i class="fa-solid fa-arrows-to-eye"></i>
+            </div>
+            <h2>Focaliza la innovación empresarial</h2>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="card">
+            <div class="icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h2>Potencia el éxito de tu empresa</h2>
+        </div>
+    </div>
+    <script>
+      import AOS from 'aos';
+      AOS.init();
+    </script>
+</body>
+</html>
