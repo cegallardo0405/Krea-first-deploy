@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import  logo from '../../public/Resources/KREA.png';
 ---
 
 <!doctype html>
@@ -40,7 +42,7 @@
         <nav class="flex justify-between items-center w-[92%]  mx-auto">
             <div class="logo">
                 <a href="/">
-                    <img class="w-32 cursor-pointer" src="../../public/Resources/krea.png" alt="Logo Krea">
+                    <Image src={logo} alt="Logo Krea"/>
                 </a>
             </div>
             <div
