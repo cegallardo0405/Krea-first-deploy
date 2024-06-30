@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && yarn add sharp",
+    "build": "astro build && npm install sharp",
     "preview": "astro preview",
     "astro": "astro"
   },
