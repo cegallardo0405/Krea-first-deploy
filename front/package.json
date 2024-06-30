@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && yarn add sharp",
     "preview": "astro preview",
     "astro": "astro"
+    
   },
   "dependencies": {
     "@astrojs/react": "^3.5.0",
@@ -24,4 +25,5 @@
   "devDependencies": {
     "@types/aos": "^3.0.7"
   }
+
 }
