@@ -9,11 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-        import AOS from 'aos';
-        AOS.init();
-    </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 
     <style>
         .bg {
@@ -661,14 +657,13 @@
 
 <body class="font-[Raleway] ">
     <div class="bg ">
-            <div class="info" data-aos="fade-up"
-            data-aos-anchor-placement="top-center">
+            <div class="info">
                 <h1>Transformamos ideas en proyectos</h1>
             </div>
     </div>
 
     <div class="content">
-        <div class="content-info" data-aos="fade-right">
+        <div class="content-info">
             <ul>
                 <li><span>Especializados en la creación de modelos de negocio exitosos.</span></li>
                 <li><span>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</span></li>
@@ -676,23 +671,23 @@
             </ul>
         </div>
 
-        <div class="content-animation" data-aos="fade-left">
-            <lottie-player src="https://lottie.host/722cc8f9-cfe8-47b2-becc-beaabf782814/uAHfmqW5ot.json" background="#ffffff" speed="1" style="width: 400px; height: 400px" loop autoplay direction="1" mode="normal"></lottie-player>
+        <div class="content-animation">
+            <dotlottie-player src="https://lottie.host/722cc8f9-cfe8-47b2-becc-beaabf782814/uAHfmqW5ot.json" background="#ffffff" speed="1" style="width: 300px; height: 300px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
         </div>
     </div>
 
     <div class="content-estadisticas">
-        <div class="estadisticas" data-aos="flip-left">
+        <div class="estadisticas">
             <h1>+8</h1>
             <p>Años de experiencia</p>
         </div>
 
-        <div class="estadisticas" data-aos="flip-left">
+        <div class="estadisticas">
             <h1>90%</h1>
             <p>Ejecución</p>
         </div>
 
-        <div class="estadisticas" data-aos="flip-left">
+        <div class="estadisticas">
             <h1>+494</h1>
             <p>Mil millones de recursos aprobados</p>
         </div>
@@ -700,19 +695,19 @@
 
     <div class="patternpad">
         <div class="info-patternpad">
-            <p data-aos="fade-in">Nuestra meta:</p>
-            <h1 data-aos="zoom-in">Transformar la vida de miles de Colombianos</h1>
+            <p>Nuestra meta:</p>
+            <h1>Transformar la vida de miles de Colombianos</h1>
         </div>
     </div>
 
     <div class="cards-content">
         <div class="title-cards">
-            <h1 data-aos="fade-in">Lo que hacemos</h1>
+            <h1 >Lo que hacemos</h1>
         </div>
 
         <div class="container__card">
 
-            <div data-aos="flip-left" class="card c1">
+            <div class="card c1">
                 <div class="icon">
                     <i class="fa-regular fa-lightbulb"></i>
                 </div>
@@ -723,7 +718,7 @@
                 </div>
             </div>
 
-            <div data-aos="flip-left" class="card c2">
+            <div class="card c2">
                 <div class="icon">
                     <i class="fa-solid fa-gears"></i>
                 </div>
@@ -734,7 +729,7 @@
                 </div>
             </div>
 
-            <div data-aos="flip-left" class="card c3">
+            <div  class="card c3">
                 <div class="icon">
                     <i class="fa-solid fa-business-time"></i>
                 </div>
@@ -745,7 +740,7 @@
                 </div>
             </div>
 
-            <div data-aos="flip-left" class="card c4">
+            <div class="card c4">
                 <div class="icon">
                     <i class="fa-solid fa-square-check"></i>
                 </div>
@@ -767,7 +762,7 @@
                     <div class="divider"></div>
                 </div>
                 <div class="column title-column">
-                    <h1 data-aos="fade-in">Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
+                    <h1>Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
                 </div>
                 <div class="column divider-column inf">
                     <div class="divider"></div>
@@ -778,59 +773,59 @@
         <div class="slider">
             <div class="slide-track">
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                    <img src="/Resources/logos-slider/bancoldex.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                    <img src="/Resources/logos-slider/minciencias.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                    <img src="/Resources/logos-slider/mincomercio.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                    <img src="/Resources/logos-slider/dnp.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                    <img src="/Resources/logos-slider/bid.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                    <img src="Resources/logos-slider/innpulsa.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                    <img src="/Resources/logos-slider/colombia_productiva.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                    <img src="/Resources/logos-slider/bienestar-famiiar.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                    <img src="/Resources/logos-slider/cooperacion-espanola.png" alt="">
                 </div>
                 
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                    <img src="/Resources/logos-slider/bancoldex.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                    <img src="/Resources/logos-slider/minciencias.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                    <img src="/Resources/logos-slider/mincomercio.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                    <img src="/Resources/logos-slider/dnp.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                    <img src="/Resources/logos-slider/bid.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                    <img src="/Resources/logos-slider/innpulsa.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                    <img src="/Resources/logos-slider/colombia_productiva.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                    <img src="/Resources/logos-slider/bienestar-famiiar.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                    <img src="/Resources/logos-slider/cooperacion-espanola.png" alt="">
                 </div>
     
             </div>
@@ -839,17 +834,17 @@
         <div class="content-estadisticas">
             <div class="estadisticas">
                 <h1 class="num" data-val="203">000</h1>
-                <p data-aos="fade-in">Cooperantes</p>
+                <p >Cooperantes</p>
             </div>
     
             <div class="estadisticas">
                 <h1 class="num" data-val="259">000</h1>
-                <p data-aos="fade-in">Convocatorias</p>
+                <p>Convocatorias</p>
             </div>
     
             <div class="estadisticas">
                 <h1 class="num" data-val="30">00</h1>
-                <p data-aos="fade-in">Billones en recursos</p>
+                <p>Billones en recursos</p>
             </div>
         </div>
 

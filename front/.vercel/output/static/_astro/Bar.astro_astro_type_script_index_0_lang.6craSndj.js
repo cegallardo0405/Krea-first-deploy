@@ -1,0 +1,1 @@
+const e=document.getElementById("menuIcon"),o=document.getElementById("navMenu"),n=document.getElementById("Header");e.addEventListener("click",()=>{o.classList.toggle("show"),e.name=e.name==="menu-outline"?"close-outline":"menu-outline"});window.addEventListener("scroll",()=>{window.scrollY>0?n.style.boxShadow="1px 1px 15px rgba(0, 0, 0, 0.3)":n.style.boxShadow="none"});
