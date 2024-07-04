@@ -1,0 +1,274 @@
+---
+const STRAPI_URL = 'https://krea-back-repo-production.up.railway.app'; 
+
+function getImageUrl(imageObject) {
+  if (!imageObject || !imageObject.data || !imageObject.data.attributes || !imageObject.data.attributes.url) {
+    return 'https://via.placeholder.com/300x200';
+  }
+  const imageUrl = imageObject.data.attributes.url;
+  return `${STRAPI_URL}${imageUrl}`;
+}
+
+async function getPosts() {
+  try {
+    const apiUrl = new URL('https://krea-back-repo-production.up.railway.app/api/posts?populate=*&filters[category][Name][$eq]=Convocatoria');
+    const response = await fetch(apiUrl.toString());
+    const { data } = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return [];
+  }
+}
+
+const posts = await getPosts();
+
+---
+<body>
+<section class="opportunities-section">
+  <div class="container">
+      <div class="column divider-column sup">
+          <div class="divider"></div>
+      </div>
+      <div class="column title-column">
+          <h3>Entérate y accede a nuevas oportunidades </h3>
+      </div>
+      <div class="column divider-column inf">
+          <div class="divider"></div>
+      </div>
+  </div>
+  <div class="content">
+      <p>Descubre oportunidades innovadoras en el Sistema de Ciencia, Tecnología e Innovación del país. Participa en emocionantes convocatorias para dar vida a tus proyectos. ¡Sé parte del movimiento que está transformando el futuro!</p>
+  </div>
+</section>
+<div class="cards-container">
+  {posts.map((post) => (
+    <div class="card">
+      <a href={`/post/${post.attributes.slug}`} title={post.attributes.title}>
+        <img 
+          src={getImageUrl(post.attributes.featuredimage)} 
+          alt={post.attributes.title} 
+        />
+      </a>
+      <span class="category">
+        <a href="#">{post.attributes.category?.data?.attributes?.Name || 'Sin categoría'}</a>
+      </span>
+      <div class="details">
+        <h3>
+          <a href={`/post/${post.attributes.slug}`}>{post.attributes.title}</a>
+        </h3>
+        <p>{post.attributes.excerpt || 'No hay resumen disponible'}</p>
+        <div class="meta">
+          <span class="author">
+            <i class="fa fa-user" aria-hidden="true"></i> By 
+            <a href="#">{post.attributes.author?.data?.attributes?.Name || 'Autor Desconocido'}</a>
+          </span>
+          <span class="date">
+            <i class="fa fa-calendar-alt" aria-hidden="true"></i> {new Date(post.attributes.publishedAt).toLocaleDateString()}
+          </span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+</body>
+  
+  <style>
+    body {
+        font-family: 'Raleway';
+    }
+
+    /* Estilos de la sección de titulo e info */
+    
+    .opportunities-section {
+        text-align: center;
+        padding: 20px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        max-width: 1140px;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+    }
+
+    .column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divider-column {
+        flex: 1;
+        width: 25%;
+    }
+
+    .divider {
+        width: 100%;
+        border-top: 1px solid #225b7369;
+    }
+
+    .title-column {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        padding: 30px;
+    }
+
+    .title-column h3 {
+        color: #41bbb1;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .opportunities-section .content p {
+        color: #333;
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+
+        .title-column h3 {
+            font-size: 32px;
+            margin-top: 40px;
+
+        }
+
+    .opportunities-section.content p {
+            font-size: 14px;
+        }
+
+    .sup {
+            width: 100%;
+            position: absolute; /* Posiciona absolutamente */
+            top: 0; /* Coloca al inicio del contenedor */
+            left: 0; /* Alinea al borde izquierdo */
+            padding: 20px 0px 20px 0px;
+        }
+
+    .inf {
+            display: none;
+        }
+    }
+
+    /* Estilos de las tarjetas */
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas según el tamaño de la pantalla */
+        column-gap: 2.2rem;
+        row-gap: 3rem;
+        justify-content: center;
+        align-items: start;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 1140px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .category {
+        background-color: #41bbb1;
+        color: #fff;
+        padding: 6px 15px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: -15px;
+        display: block;
+        margin-left: 15px;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        width: fit-content;
+    }
+
+    .details {
+        padding: 40px;
+    }
+
+    .details h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 10px;
+    }
+
+    .details p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        color: #888;
+    }
+
+    .meta.author,.meta.date {
+        display: flex;
+        align-items: center;
+    }
+
+    .meta i {
+        margin-right: 5px;
+    }
+
+    .meta .date::before{
+        content: "-";
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 768px) {
+    .cards-container {
+            grid-auto-flow: row; /* Alinea los elementos en columnas */
+            gap: 40px;
+        }
+
+    .card {
+            width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+        }
+    }
+
+    /* Media query para pantallas medianas y grandes */
+    @media (min-width: 769px) {
+    .card {
+            /* Mantener el estilo original para pantallas medianas y grandes */
+        }
+    }
+</style>
